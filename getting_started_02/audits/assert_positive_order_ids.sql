@@ -5,4 +5,4 @@ AUDIT (
 SELECT *
 FROM @this_model
 WHERE
-  item_id < 0
+  id < 0
