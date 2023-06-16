@@ -1,0 +1,19 @@
+test_sql_mesh_fake_users_full_model:
+  model: sql_mesh_fake_users.full_model
+  inputs:
+    sql_mesh_fake_users.incremental_model:
+        rows:
+        - id: 896
+          username: 'elliottbrandon'
+          last_attention_at: '2023-06-01'
+        - id: 1349
+          username: 'coxvincent'
+          last_attention_at: '2023-05-11'
+  outputs:
+    query:
+      rows:
+      - last_attention_at: '2023-06-01'
+        number_of_views: 1
+      - last_attention_at: '2023-05-11'
+        number_of_views: 1
+
