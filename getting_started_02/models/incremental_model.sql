@@ -22,13 +22,14 @@ MODEL(
     kind INCREMENTAL_BY_TIME_RANGE(
         time_column last_attention_at
     ),
+    start '2020-01-01',
     cron '@daily',
 );
 
 SELECT
     id,
     username,
-    last_attention_at
+    last_attention_at,
 FROM
     sql_mesh_fake_users.seed_model
 WHERE last_attention_at between @start_ds AND @end_ds;
