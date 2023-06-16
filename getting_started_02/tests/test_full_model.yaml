@@ -1,21 +1,14 @@
 test_example_full_model:
-  model: sqlmesh_example.full_model
+  model: sql_mesh_fake_users.full_model
   inputs:
-    sqlmesh_example.incremental_model:
+    sql_mesh_fake_users.full_model:
         rows:
-        - id: 1
-          item_id: 1
-          ds: '2020-01-01'
-        - id: 2
-          item_id: 1
-          ds: '2020-01-02'
-        - id: 3
-          item_id: 2
-          ds: '2020-01-03'
+        - id: 896
+          username: 'elliottbrandon',
+          last_attention_at: '2023-06-01'
   outputs:
     query:
       rows:
-      - item_id: 1
-        num_orders: 2
-      - item_id: 2
-        num_orders: 1
+      - id: 896
+        last_attention_at: '2023-06-01'
+

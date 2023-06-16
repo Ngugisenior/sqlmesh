@@ -22,7 +22,6 @@ MODEL(
     kind INCREMENTAL_BY_TIME_RANGE(
         time_column last_attention_at
     ),
-    start '2015-0-01',
     cron '@daily',
 );
 
@@ -32,4 +31,4 @@ SELECT
     last_attention_at,
 FROM
     sql_mesh_fake_users.seed_model
-WHERE last_attention_at between @start and end_last_attention_at
+WHERE last_attention_at between @start_ds AND @end_ds;
