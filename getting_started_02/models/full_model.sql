@@ -25,6 +25,7 @@ SELECT
   id,
   username,
   last_attention_at,
+  count(distinct id) as number_of_views,
 FROM
   sql_mesh_fake_users.incremental_model
-ORDER BY last_attention_at ASC
+GROUP BY last_attention_at 
